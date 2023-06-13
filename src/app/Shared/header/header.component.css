@@ -1,0 +1,36 @@
+.btn-success {
+  cursor: pointer;
+  font: inherit;
+  border: 2px solid #006646;
+  background-color: white;
+  color: green;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+}
+
+.btn-success:hover,
+.btn-success:active {
+  background-color: #006646;
+  color: white;
+}
+
+.icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-right: 0.5rem;
+}
+
+.badge {
+  border: 1px solid #006646;
+  background-color: white;
+  color: black;
+  padding: 0.25rem 1rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+

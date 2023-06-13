@@ -1,0 +1,77 @@
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col col-md-8">
+      <div class="card" style="border-radius: 1rem">
+        <div class="row g-0">
+          <!--left-side-->
+          <div class="col-md-6 col-lg-5 d-none d-md-block">
+            <img
+              src="./assets/images/login-img.jpg"
+              alt="login form"
+              class="img-fluid h-100"
+              style="border-radius: 1rem 0 0 1rem"
+            />
+          </div>
+          <!--right-side-->
+          <div class="col-md-6 col-lg-7 d-flex align-items-center">
+            <div class="card-body p-4 p-lg-5 text-black h-100">
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">
+                  Sign into your account
+                </h5>
+
+                <!--  Email input and validation     -->
+                <div class="form-outline mb-4">
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control form-control-lg"
+                    formControlName="email"
+                  />
+                  <label class="form-label" for="email">Email address</label>
+                </div>
+
+                <!--   Password input and validation  -->
+                <div class="form-outline mb-2">
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control form-control-lg"
+                    formControlName="password"
+                    aria-describedby="passwordHelpBlock"
+                  />
+                  <label class="form-label" for="password">Password</label>
+                </div>
+                <div
+                  id="passwordHelpBlock"
+                  class="form-text"
+                  *ngIf="
+                    !loginForm.get('password')?.valid &&
+                    loginForm.get('password')?.touched
+                  "
+                >
+                  Your password must be at least 8 characters long, include at
+                  least one number and one character.
+                </div>
+                <!-- Button -->
+                <div class="pt-1 mb-4">
+                  <button
+                    [disabled]="loginForm.invalid"
+                    class="btn"
+                    [ngClass]="{
+                      'btn-dark': !loginForm.valid,
+                      'btn-primary': loginForm.valid
+                    }"
+                    type="submit"
+                  >
+                    Login
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

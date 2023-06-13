@@ -1,0 +1,41 @@
+
+<div [ngClass]="{ backdrop: displayModal$ | async }" (click)="onBackdropClick()">
+  <div id="myModal" class="modal" (click)="$event.stopPropagation()">
+    <!-- Modal header -->
+    <div class="modal-header">
+      <h5 class="modal-title">Your Order</h5>
+      <button type="button" class="btn-close" (click)="onClickClose()" aria-label="Close"></button>
+    </div>
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <!-- Modal body -->
+      <div class="modal-body">
+        <!-- Looping through each meal item -->
+        <div *ngFor="let meal of cartItems$ | async" class="meal-item">
+          <h3>{{ meal.name }}</h3>
+          <p class="description">{{ meal.description }}</p>
+          <div class="btns">
+            <p class="price">Price: ${{ meal.price }}</p>
+            <button class="btn btn-dark" (click)="removeItem(meal.id)">-</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <span>Total Amount</span>
+        <span class="price">${{ totalAmount$ | async }}</span>
+      </div>
+
+      <!-- Row for close and clear buttons -->
+      <div class="row clear justify-content-end">
+        <div class="col-md-2 footer d-flex justify-content-around mx-4">
+          <button class="btn btn-success mx-2" (click)="onClickClose()">Close</button>
+          <button class="btn btn-danger" (click)="onClickClearCart()">Clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

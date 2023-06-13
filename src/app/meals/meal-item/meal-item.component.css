@@ -1,0 +1,75 @@
+.meal-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.meal h3 {
+  margin: 0 0 0.25rem 0;
+}
+
+.description {
+  font-style: italic;
+}
+
+.price {
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: green;
+  font-size: 1.25rem;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid green;
+  color: green;
+  padding: 0.25rem 2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 1px;
+}
+
+button:first-child {
+  margin-right: 2px;
+}
+
+button:hover,
+button:active {
+  background-color: green;
+  border-color: white;
+  color: white;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /*  CSS rules for tablets go here */
+  .meal-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* CSS rules for mobile devices go here */
+  .meal-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -1,0 +1,24 @@
+<div class="container-fluid meals pt-3">
+  <div class="row justify-content-center align-items-center">
+    <div class="col col-md-8 summary">
+      <h2>Delicious Food, Delivered To You</h2>
+      <p>
+        Our delicious meal plans are designed by registered dietitians and food
+        experts to help you lose weight, eat more fiber, go vegan and more.
+      </p>
+      <p>Browse dozens of meal plans to find one that's right for you.</p>
+    </div>
+  </div>
+</div>
+<!--DISPLAYING THE MEALS ITEMS-->
+<div class="container meal-item">
+  <div
+    class="row justify-content-center align-items-center text-center available-meals"
+  >
+    <div class="col-md-8 card" >
+      <div *ngFor="let meal of mealsItems" >
+        <app-meal-item  [meal]="meal"></app-meal-item>
+      </div>
+    </div>
+  </div>
+</div>

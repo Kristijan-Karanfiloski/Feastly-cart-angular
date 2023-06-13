@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container d-flex justify-content-between">
+    <div>
+      <span class="navbar-brand mb-0 h1">Feastly</span>
+    </div>
+    <div>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <button class="btn btn-success cart" type="button" (click)="navigateToCart()">
+            <span class="icon">
+              <app-cart-icon></app-cart-icon>
+            </span>
+            <span>Your Cart</span>
+            <span class="badge">{{items}}</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<app-modal *ngIf="displayModal$ | async">
+</app-modal>
